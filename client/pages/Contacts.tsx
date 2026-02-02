@@ -51,16 +51,16 @@ export default function Contacts() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50">
       <Header />
 
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        <div className="mb-8">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-2">
-            Emergency Contacts
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
+        <div className="mb-12">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-foreground mb-4">
+            Emergency <span className="bg-gradient-to-r from-primary to-red-500 bg-clip-text text-transparent">Contacts</span>
           </h2>
-          <p className="text-muted-foreground">
-            Manage your emergency contacts for quick notification
+          <p className="text-lg text-muted-foreground font-medium max-w-2xl">
+            Keep your trusted contacts nearby for instant notification when you need them most
           </p>
         </div>
 
