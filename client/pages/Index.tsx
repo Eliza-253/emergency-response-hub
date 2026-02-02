@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
-import { MapPin, Phone, Flame, AlertCircle, Heart, Shield } from 'lucide-react';
+import { MapPin, Phone, Flame, AlertCircle, Heart, Shield, Zap, Clock } from 'lucide-react';
 import Header from '@/components/Header';
 import EmergencyCard from '@/components/EmergencyCard';
 
 export default function Index() {
   const [location, setLocation] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [showPulse, setShowPulse] = useState(true);
 
   useEffect(() => {
     // Get user's current location
@@ -33,17 +34,24 @@ export default function Index() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50">
       <Header />
 
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
         {/* Hero Section - Emergency Call Button */}
-        <div className="mb-12 sm:mb-16 text-center">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Emergency Assistance
+        <div className="mb-12 sm:mb-20 text-center">
+          <div className="inline-block mb-6 px-4 py-2 bg-red-100 rounded-full border border-red-200">
+            <p className="text-sm font-semibold text-primary flex items-center gap-2">
+              <Zap className="w-4 h-4" />
+              Always Available 24/7
+            </p>
+          </div>
+
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-foreground mb-6 leading-tight">
+            Emergency <span className="bg-gradient-to-r from-primary via-red-500 to-orange-500 bg-clip-text text-transparent">Response</span> at Your Fingertips
           </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Quick access to emergency services when you need help most. Choose the appropriate service or tap the emergency button below.
+          <p className="text-lg sm:text-xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed font-medium">
+            When every second counts, SafeCall connects you to emergency services instantly. Get help fast with location sharing and priority dispatch.
           </p>
 
           {/* Large Emergency Call Button */}
