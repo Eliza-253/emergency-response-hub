@@ -87,16 +87,20 @@ export default function Index() {
 
           {/* Location Display */}
           {location && (
-            <div className="inline-flex items-center gap-2 bg-white border border-border rounded-lg px-4 py-2 text-sm">
+            <div className="inline-flex items-center gap-2 bg-white border-2 border-primary/20 rounded-full px-4 sm:px-6 py-3 text-sm shadow-sm hover:border-primary/40 transition-colors">
+              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
               <MapPin className="w-4 h-4 text-primary" />
-              <span className="text-foreground font-medium">{location}</span>
+              <span className="text-foreground font-semibold">{location}</span>
             </div>
           )}
         </div>
 
         {/* Quick Action Cards Grid */}
-        <div className="mb-12 sm:mb-16">
-          <h3 className="text-2xl font-bold text-foreground mb-6">Quick Services</h3>
+        <div className="mb-16 sm:mb-24">
+          <div className="flex items-center gap-3 mb-8">
+            <h3 className="text-3xl font-black text-foreground">Quick Services</h3>
+            <div className="flex-1 h-1 bg-gradient-to-r from-primary/50 to-transparent rounded-full max-w-xs"></div>
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             <EmergencyCard
               icon={<Flame />}
