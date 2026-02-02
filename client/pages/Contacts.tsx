@@ -143,10 +143,10 @@ export default function Contacts() {
         {/* Contacts List */}
         <div className="space-y-4">
           {contacts.length === 0 ? (
-            <div className="text-center py-12 bg-white border border-border rounded-xl">
-              <User className="w-12 h-12 text-muted-foreground mx-auto mb-4 opacity-50" />
-              <p className="text-muted-foreground">No emergency contacts yet</p>
-              <p className="text-sm text-muted-foreground mt-1">
+            <div className="text-center py-16 bg-white border-2 border-dashed border-border rounded-2xl">
+              <User className="w-16 h-16 text-muted-foreground mx-auto mb-4 opacity-40" />
+              <p className="text-lg font-semibold text-muted-foreground">No emergency contacts yet</p>
+              <p className="text-sm text-muted-foreground mt-2">
                 Add your first contact to get started
               </p>
             </div>
@@ -154,30 +154,30 @@ export default function Contacts() {
             contacts.map((contact) => (
               <div
                 key={contact.id}
-                className="bg-white border border-border rounded-xl p-6 sm:p-8 flex items-center justify-between hover:shadow-md transition-shadow"
+                className="bg-white border border-border/50 rounded-2xl p-6 sm:p-8 flex items-center justify-between hover:shadow-lg hover:-translate-y-1 transition-all group"
               >
                 <div className="flex items-center gap-4 flex-1 min-w-0">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <User className="w-6 h-6 text-primary" />
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center flex-shrink-0 group-hover:from-primary/30 group-hover:to-primary/10 transition-all">
+                    <User className="w-7 h-7 text-primary" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <h4 className="font-bold text-foreground">{contact.name}</h4>
-                    <p className="text-sm text-muted-foreground">{contact.relationship}</p>
-                    <p className="text-sm font-medium text-foreground mt-1">{contact.phone}</p>
+                    <h4 className="font-black text-foreground text-lg">{contact.name}</h4>
+                    <p className="text-sm text-muted-foreground font-medium">{contact.relationship}</p>
+                    <p className="text-sm font-bold text-foreground mt-1">{contact.phone}</p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2 ml-4">
+                <div className="flex items-center gap-3 ml-4">
                   <button
                     onClick={() => handleCall(contact.phone, contact.name)}
-                    className="p-3 rounded-lg bg-secondary text-white hover:bg-blue-700 transition-colors flex items-center justify-center"
+                    className="p-3 rounded-xl bg-gradient-to-br from-secondary to-blue-700 text-white hover:shadow-lg transition-all transform hover:scale-110 active:scale-95 flex items-center justify-center"
                     title="Call contact"
                   >
                     <Phone className="w-5 h-5" />
                   </button>
                   <button
                     onClick={() => handleDeleteContact(contact.id)}
-                    className="p-3 rounded-lg bg-red-100 text-primary hover:bg-red-200 transition-colors flex items-center justify-center"
+                    className="p-3 rounded-xl bg-red-100 text-primary hover:bg-red-200 transition-all transform hover:scale-110 active:scale-95 flex items-center justify-center"
                     title="Delete contact"
                   >
                     <Trash2 className="w-5 h-5" />
@@ -190,10 +190,10 @@ export default function Contacts() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-border bg-white mt-12 sm:mt-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <p className="text-center text-sm text-muted-foreground">
-            Your emergency contacts are kept secure and private
+      <footer className="border-t border-border/50 bg-gradient-to-t from-slate-50 to-transparent mt-16 sm:mt-24">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <p className="text-center text-sm font-medium text-muted-foreground">
+            Your emergency contacts are encrypted and kept secure
           </p>
         </div>
       </footer>
