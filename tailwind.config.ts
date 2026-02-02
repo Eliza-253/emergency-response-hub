@@ -63,6 +63,10 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      boxShadow: {
+        emergency: "0 10px 30px -5px rgba(220, 38, 38, 0.3)",
+        "emergency-lg": "0 20px 50px -10px rgba(220, 38, 38, 0.4)",
+      },
       keyframes: {
         "accordion-down": {
           from: {
