@@ -29,10 +29,13 @@ const NotFound = () => {
             </div>
           </div>
 
-          <h1 className="text-5xl sm:text-6xl font-bold text-foreground mb-4">404</h1>
+          <h1 className="text-5xl sm:text-6xl font-bold text-foreground mb-4">
+            404
+          </h1>
           <p className="text-xl text-muted-foreground mb-2">Page Not Found</p>
           <p className="text-muted-foreground mb-8 max-w-md mx-auto">
-            The page you're looking for doesn't exist. It may have been moved or deleted.
+            The page you're looking for doesn't exist. It may have been moved or
+            deleted.
           </p>
 
           <Link
