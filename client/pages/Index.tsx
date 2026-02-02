@@ -1,62 +1,207 @@
-import { DemoResponse } from "@shared/api";
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
+import { MapPin, Phone, Flame, AlertCircle, Heart, Shield } from 'lucide-react';
+import Header from '@/components/Header';
+import EmergencyCard from '@/components/EmergencyCard';
 
 export default function Index() {
-  const [exampleFromServer, setExampleFromServer] = useState("");
-  // Fetch users on component mount
+  const [location, setLocation] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+
   useEffect(() => {
-    fetchDemo();
+    // Get user's current location
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          setLocation(`${latitude.toFixed(4)}, ${longitude.toFixed(4)}`);
+        },
+        () => {
+          setLocation('Location access denied');
+        }
+      );
+    }
   }, []);
 
-  // Example of how to fetch data from the server (if needed)
-  const fetchDemo = async () => {
-    try {
-      const response = await fetch("/api/demo");
-      const data = (await response.json()) as DemoResponse;
-      setExampleFromServer(data.message);
-    } catch (error) {
-      console.error("Error fetching hello:", error);
-    }
+  const handleCall = (number: string, service: string) => {
+    setIsLoading(true);
+    // In a real app, this would initiate an actual call
+    // For now, we'll show a simulated response
+    setTimeout(() => {
+      alert(`Calling ${service}...\n\nIn production, this would dial ${number}`);
+      setIsLoading(false);
+    }, 500);
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200">
-      <div className="text-center">
-        {/* TODO: FUSION_GENERATION_APP_PLACEHOLDER replace everything here with the actual app! */}
-        <h1 className="text-2xl font-semibold text-slate-800 flex items-center justify-center gap-3">
-          <svg
-            className="animate-spin h-8 w-8 text-slate-400"
-            viewBox="0 0 50 50"
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <Header />
+
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        {/* Hero Section - Emergency Call Button */}
+        <div className="mb-12 sm:mb-16 text-center">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            Emergency Assistance
+          </h2>
+          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Quick access to emergency services when you need help most. Choose the appropriate service or tap the emergency button below.
+          </p>
+
+          {/* Large Emergency Call Button */}
+          <button
+            onClick={() => handleCall('911', 'Emergency Services')}
+            disabled={isLoading}
+            className="relative inline-block mb-8 group"
           >
-            <circle
-              className="opacity-30"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
-              fill="none"
+            {/* Outer glow animation */}
+            <div className="absolute inset-0 bg-primary rounded-full blur-2xl opacity-50 group-hover:opacity-75 animate-pulse transition-opacity duration-300"></div>
+
+            {/* Main button */}
+            <div className="relative bg-primary hover:bg-red-700 text-white rounded-full p-6 sm:p-8 shadow-emergency hover:shadow-emergency-lg transition-all duration-300 transform hover:scale-105 active:scale-95 cursor-pointer">
+              <Phone className="w-16 h-16 sm:w-20 sm:h-20 mx-auto" />
+            </div>
+
+            {/* Text below button */}
+            <div className="mt-4">
+              <p className="text-lg sm:text-xl font-bold text-foreground">Emergency Call</p>
+              <p className="text-sm text-muted-foreground">Press to call 911</p>
+            </div>
+          </button>
+
+          {/* Location Display */}
+          {location && (
+            <div className="inline-flex items-center gap-2 bg-white border border-border rounded-lg px-4 py-2 text-sm">
+              <MapPin className="w-4 h-4 text-primary" />
+              <span className="text-foreground font-medium">{location}</span>
+            </div>
+          )}
+        </div>
+
+        {/* Quick Action Cards Grid */}
+        <div className="mb-12 sm:mb-16">
+          <h3 className="text-2xl font-bold text-foreground mb-6">Quick Services</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            <EmergencyCard
+              icon={<Flame />}
+              title="Fire Emergency"
+              description="Report a fire or fire hazard"
+              number="911"
+              color="red"
+              onClick={() => handleCall('911', 'Fire Department')}
             />
-            <circle
-              className="text-slate-600"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
-              fill="none"
-              strokeDasharray="100"
-              strokeDashoffset="75"
+            <EmergencyCard
+              icon={<AlertCircle />}
+              title="Police"
+              description="Report a crime or emergency"
+              number="911"
+              color="blue"
+              onClick={() => handleCall('911', 'Police')}
             />
-          </svg>
-          Generating your app...
-        </h1>
-        <p className="mt-4 text-slate-600 max-w-md">
-          Watch the chat on the left for updates that might need your attention
-          to finish generating
-        </p>
-        <p className="mt-4 hidden max-w-md">{exampleFromServer}</p>
-      </div>
+            <EmergencyCard
+              icon={<Heart />}
+              title="Medical Emergency"
+              description="Get immediate medical help"
+              number="911"
+              color="green"
+              onClick={() => handleCall('911', 'Ambulance')}
+            />
+            <EmergencyCard
+              icon={<Shield />}
+              title="Non-Emergency Police"
+              description="Report non-urgent issues"
+              number="311"
+              color="orange"
+              onClick={() => handleCall('311', 'Non-Emergency Police')}
+            />
+            <EmergencyCard
+              icon={<Heart />}
+              title="Poison Control"
+              description="Poison or toxin exposure"
+              number="1-800-222-1222"
+              color="orange"
+              onClick={() => handleCall('1-800-222-1222', 'Poison Control')}
+            />
+            <EmergencyCard
+              icon={<Phone />}
+              title="Suicide Prevention"
+              description="Mental health crisis support"
+              number="988"
+              color="blue"
+              onClick={() => handleCall('988', 'Suicide Prevention Hotline')}
+            />
+          </div>
+        </div>
+
+        {/* Features Section */}
+        <div className="bg-white rounded-xl border border-border p-8 sm:p-12">
+          <h3 className="text-2xl font-bold text-foreground mb-8">Key Features</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div>
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-foreground mb-2">Location Sharing</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Automatically share your location with emergency responders for faster assistance
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                  <Phone className="w-6 h-6 text-secondary" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-foreground mb-2">One-Tap Calling</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Quickly reach emergency services with a single tap, no dialing required
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center flex-shrink-0">
+                  <Heart className="w-6 h-6 text-green-600" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-foreground mb-2">Emergency Contacts</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Keep your emergency contacts at your fingertips for quick notification
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-lg bg-orange-100 flex items-center justify-center flex-shrink-0">
+                  <Shield className="w-6 h-6 text-orange-600" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-foreground mb-2">Privacy Protected</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Your data is encrypted and only shared when you authorize an emergency call
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      {/* Footer */}
+      <footer className="border-t border-border bg-white mt-12 sm:mt-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <p className="text-center text-sm text-muted-foreground">
+            SafeCall Emergency Response System © 2024. Always call 911 in life-threatening emergencies.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }
