@@ -58,20 +58,30 @@ export default function Index() {
           <button
             onClick={() => handleCall('911', 'Emergency Services')}
             disabled={isLoading}
-            className="relative inline-block mb-8 group"
+            className="relative inline-block mb-10 group"
           >
-            {/* Outer glow animation */}
-            <div className="absolute inset-0 bg-primary rounded-full blur-2xl opacity-50 group-hover:opacity-75 animate-pulse transition-opacity duration-300"></div>
+            {/* Triple ring pulses */}
+            <div className="absolute inset-0 rounded-full" style={{
+              animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              boxShadow: '0 0 0 15px rgba(220, 38, 38, 0.1), 0 0 0 35px rgba(220, 38, 38, 0.05)'
+            }}></div>
+            <div className="absolute inset-0 rounded-full" style={{
+              animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite 0.3s',
+              boxShadow: '0 0 0 15px rgba(220, 38, 38, 0.08)'
+            }}></div>
 
-            {/* Main button */}
-            <div className="relative bg-primary hover:bg-red-700 text-white rounded-full p-6 sm:p-8 shadow-emergency hover:shadow-emergency-lg transition-all duration-300 transform hover:scale-105 active:scale-95 cursor-pointer">
-              <Phone className="w-16 h-16 sm:w-20 sm:h-20 mx-auto" />
+            {/* Main button with gradient */}
+            <div className="relative bg-gradient-to-br from-primary to-red-700 hover:from-red-700 hover:to-red-800 text-white rounded-full p-8 sm:p-10 shadow-emergency hover:shadow-emergency-lg transition-all duration-300 transform hover:scale-110 active:scale-95 cursor-pointer border-4 border-red-300/20">
+              <Phone className="w-20 h-20 sm:w-24 sm:h-24 mx-auto drop-shadow-lg" strokeWidth={1.5} />
             </div>
 
             {/* Text below button */}
-            <div className="mt-4">
-              <p className="text-lg sm:text-xl font-bold text-foreground">Emergency Call</p>
-              <p className="text-sm text-muted-foreground">Press to call 911</p>
+            <div className="mt-6">
+              <p className="text-xl sm:text-2xl font-black text-foreground">Emergency Call</p>
+              <p className="text-sm sm:text-base text-primary font-semibold mt-1 flex items-center justify-center gap-2">
+                <Clock className="w-4 h-4" />
+                Tap to call 911 instantly
+              </p>
             </div>
           </button>
 
