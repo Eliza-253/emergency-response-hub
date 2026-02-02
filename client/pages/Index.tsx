@@ -154,59 +154,66 @@ export default function Index() {
         </div>
 
         {/* Features Section */}
-        <div className="bg-white rounded-xl border border-border p-8 sm:p-12">
-          <h3 className="text-2xl font-bold text-foreground mb-8">Key Features</h3>
+        <div className="bg-gradient-to-br from-white via-slate-50 to-white rounded-2xl border border-border/50 p-8 sm:p-16 shadow-lg">
+          <div className="flex items-center gap-3 mb-12">
+            <h3 className="text-3xl font-black text-foreground">Key Features</h3>
+            <div className="flex-1 h-1 bg-gradient-to-r from-secondary/50 to-transparent rounded-full max-w-xs"></div>
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            <div>
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-6 h-6 text-primary" />
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative flex items-start gap-4 p-6 rounded-xl">
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center flex-shrink-0 group-hover:from-primary/30 group-hover:to-primary/10 transition-all duration-300">
+                  <MapPin className="w-7 h-7 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-foreground mb-2">Location Sharing</h4>
-                  <p className="text-sm text-muted-foreground">
+                  <h4 className="font-black text-foreground mb-2 text-lg">Location Sharing</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     Automatically share your location with emergency responders for faster assistance
                   </p>
                 </div>
               </div>
             </div>
 
-            <div>
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0">
-                  <Phone className="w-6 h-6 text-secondary" />
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-secondary/5 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative flex items-start gap-4 p-6 rounded-xl">
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-secondary/20 to-secondary/5 flex items-center justify-center flex-shrink-0 group-hover:from-secondary/30 group-hover:to-secondary/10 transition-all duration-300">
+                  <Phone className="w-7 h-7 text-secondary" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-foreground mb-2">One-Tap Calling</h4>
-                  <p className="text-sm text-muted-foreground">
+                  <h4 className="font-black text-foreground mb-2 text-lg">One-Tap Calling</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     Quickly reach emergency services with a single tap, no dialing required
                   </p>
                 </div>
               </div>
             </div>
 
-            <div>
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center flex-shrink-0">
-                  <Heart className="w-6 h-6 text-green-600" />
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative flex items-start gap-4 p-6 rounded-xl">
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-green-100/50 to-green-50/50 flex items-center justify-center flex-shrink-0 group-hover:from-green-100 group-hover:to-green-50 transition-all duration-300">
+                  <Heart className="w-7 h-7 text-green-600" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-foreground mb-2">Emergency Contacts</h4>
-                  <p className="text-sm text-muted-foreground">
+                  <h4 className="font-black text-foreground mb-2 text-lg">Emergency Contacts</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     Keep your emergency contacts at your fingertips for quick notification
                   </p>
                 </div>
               </div>
             </div>
 
-            <div>
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-orange-100 flex items-center justify-center flex-shrink-0">
-                  <Shield className="w-6 h-6 text-orange-600" />
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative flex items-start gap-4 p-6 rounded-xl">
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-orange-100/50 to-orange-50/50 flex items-center justify-center flex-shrink-0 group-hover:from-orange-100 group-hover:to-orange-50 transition-all duration-300">
+                  <Shield className="w-7 h-7 text-orange-600" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-foreground mb-2">Privacy Protected</h4>
-                  <p className="text-sm text-muted-foreground">
+                  <h4 className="font-black text-foreground mb-2 text-lg">Privacy Protected</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     Your data is encrypted and only shared when you authorize an emergency call
                   </p>
                 </div>
