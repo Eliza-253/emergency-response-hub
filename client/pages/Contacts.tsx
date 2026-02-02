@@ -66,11 +66,11 @@ export default function Contacts() {
 
         {/* Add Contact Form */}
         {isAddingContact && (
-          <div className="bg-white border border-border rounded-xl p-6 sm:p-8 mb-8">
-            <h3 className="text-xl font-bold text-foreground mb-6">Add New Contact</h3>
-            <div className="space-y-4">
+          <div className="bg-white border border-border/50 rounded-2xl p-8 sm:p-10 mb-8 shadow-lg">
+            <h3 className="text-2xl font-black text-foreground mb-8">Add New Contact</h3>
+            <div className="space-y-5">
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
+                <label className="block text-sm font-bold text-foreground mb-3">
                   Full Name
                 </label>
                 <input
@@ -79,12 +79,12 @@ export default function Contacts() {
                   onChange={(e) =>
                     setNewContact({ ...newContact, name: e.target.value })
                   }
-                  className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                  className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                   placeholder="Enter contact name"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
+                <label className="block text-sm font-bold text-foreground mb-3">
                   Relationship
                 </label>
                 <input
@@ -93,12 +93,12 @@ export default function Contacts() {
                   onChange={(e) =>
                     setNewContact({ ...newContact, relationship: e.target.value })
                   }
-                  className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                  className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                   placeholder="e.g., Family, Friend, Doctor"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
+                <label className="block text-sm font-bold text-foreground mb-3">
                   Phone Number
                 </label>
                 <input
@@ -107,20 +107,20 @@ export default function Contacts() {
                   onChange={(e) =>
                     setNewContact({ ...newContact, phone: e.target.value })
                   }
-                  className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                  className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                   placeholder="Enter phone number"
                 />
               </div>
-              <div className="flex gap-3">
+              <div className="flex gap-3 pt-4">
                 <button
                   onClick={handleAddContact}
-                  className="flex-1 bg-primary text-white py-2 rounded-lg font-medium hover:bg-red-700 transition-colors"
+                  className="flex-1 bg-gradient-to-br from-primary to-red-700 text-white py-3 rounded-lg font-bold hover:shadow-lg transition-all transform hover:scale-105 active:scale-95"
                 >
                   Save Contact
                 </button>
                 <button
                   onClick={() => setIsAddingContact(false)}
-                  className="flex-1 bg-muted text-foreground py-2 rounded-lg font-medium hover:bg-gray-300 transition-colors"
+                  className="flex-1 bg-muted text-foreground py-3 rounded-lg font-bold hover:bg-gray-300 transition-colors"
                 >
                   Cancel
                 </button>
@@ -133,7 +133,7 @@ export default function Contacts() {
         {!isAddingContact && (
           <button
             onClick={() => setIsAddingContact(true)}
-            className="w-full sm:w-auto bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-red-700 transition-colors flex items-center justify-center gap-2 mb-8"
+            className="w-full sm:w-auto bg-gradient-to-br from-primary to-red-700 text-white px-8 py-3 rounded-xl font-bold hover:shadow-lg transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2 mb-8"
           >
             <Plus className="w-5 h-5" />
             Add Contact
