@@ -224,10 +224,20 @@ export default function Index() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-border bg-white mt-12 sm:mt-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <p className="text-center text-sm text-muted-foreground">
-            SafeCall Emergency Response System © 2024. Always call 911 in life-threatening emergencies.
+      <footer className="border-t border-border/50 bg-gradient-to-t from-slate-50 to-transparent mt-16 sm:mt-24">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-6 mb-8">
+            <div>
+              <p className="text-sm font-semibold text-foreground">SafeCall Emergency Response</p>
+              <p className="text-xs text-muted-foreground mt-1">Helping you get help, fast.</p>
+            </div>
+            <p className="text-xs text-muted-foreground">
+              © 2024. Always call 911 in life-threatening emergencies.
+            </p>
+          </div>
+          <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
+          <p className="text-center text-xs text-muted-foreground/70 mt-6">
+            24/7 Emergency Assistance | Designed for Speed | Privacy First
           </p>
         </div>
       </footer>
