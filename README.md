@@ -5,6 +5,7 @@ A modern, production-ready emergency response application designed to connect us
 ## 🚨 Key Features
 
 ### Emergency Services
+
 - **One-Tap Emergency Call**: Large, prominent emergency button for instant 911 access with multi-ring pulsing animation
 - **Quick Services Grid**: Fast access to 6 emergency services:
   - Fire Emergency (911)
@@ -15,18 +16,21 @@ A modern, production-ready emergency response application designed to connect us
   - Suicide Prevention Hotline (988)
 
 ### Emergency Contacts
+
 - **Manage Contacts**: Add, view, and delete emergency contacts
 - **Quick Call**: One-tap calling to emergency contacts
 - **Contact Information**: Store name, relationship, and phone number
 - **Secure Storage**: All contacts are encrypted and protected
 
 ### User Account
+
 - **Sign-Up System**: Create account with email validation
 - **Form Validation**: Real-time feedback for all form fields
 - **Secure Authentication**: Password confirmation and requirements
 - **User Profile**: Store emergency contact information
 
 ### Location Services
+
 - **Auto Location Detection**: Displays current coordinates when permitted
 - **Location Sharing**: Automatically share location with emergency responders
 - **Live Status**: Green indicator showing location is active
@@ -43,7 +47,9 @@ A modern, production-ready emergency response application designed to connect us
 ## 📱 Pages
 
 ### Home (`/`)
+
 The main dashboard featuring:
+
 - 24/7 availability badge
 - Large emergency call button with pulsing effect
 - Location display with live status
@@ -52,7 +58,9 @@ The main dashboard featuring:
 - Responsive design for all screen sizes
 
 ### Emergency Contacts (`/contacts`)
+
 Contact management interface with:
+
 - Add new emergency contact form
 - Contact list with call and delete actions
 - Real-time list updates
@@ -60,7 +68,9 @@ Contact management interface with:
 - Privacy assurance messaging
 
 ### Sign-Up (`/signup`)
+
 User registration page featuring:
+
 - Full Name input with user icon
 - Email validation
 - Phone number validation
@@ -82,6 +92,7 @@ User registration page featuring:
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js 18+ or pnpm 10.14.0+
 - npm or pnpm package manager
 
@@ -149,6 +160,7 @@ tailwind.config.ts          # TailwindCSS configuration
 ## ✨ Features in Detail
 
 ### Emergency Button
+
 - Large circular button with gradient background
 - Triple-ring pulsing animation
 - Hover scale effect (1.1x)
@@ -156,7 +168,9 @@ tailwind.config.ts          # TailwindCSS configuration
 - Displays location status below
 
 ### Form Validation
+
 Real-time validation with helpful feedback:
+
 - **Full Name**: Non-empty validation
 - **Email**: Valid email format check
 - **Phone**: 10+ digit validation
@@ -164,6 +178,7 @@ Real-time validation with helpful feedback:
 - **Confirm Password**: Match validation
 
 ### Responsive Design
+
 - Mobile: Single column layout, optimized touch targets
 - Tablet: 2-column grid for services
 - Desktop: 3-column grid with full features
@@ -180,6 +195,7 @@ Real-time validation with helpful feedback:
 ## 📊 Form Features
 
 ### Sign-Up Form
+
 - Icon-integrated input fields
 - Password visibility toggle (eye icon)
 - Real-time error highlighting
@@ -188,6 +204,7 @@ Real-time validation with helpful feedback:
 - Success confirmation screen
 
 ### Contact Form
+
 - Pre-populated default contacts
 - Quick add/edit functionality
 - Delete with single tap
@@ -224,9 +241,9 @@ Edit `client/global.css`:
 
 ```css
 :root {
-  --primary: 0 84% 60%;        /* Emergency red */
-  --secondary: 209 86% 55%;    /* Info blue */
-  --accent: 45 93% 56%;        /* Highlight yellow */
+  --primary: 0 84% 60%; /* Emergency red */
+  --secondary: 209 86% 55%; /* Info blue */
+  --accent: 45 93% 56%; /* Highlight yellow */
 }
 ```
 
@@ -241,13 +258,14 @@ Edit `client/pages/Index.tsx` and add to the Quick Services grid:
   description="Service description"
   number="XXX-XXX-XXXX"
   color="red|blue|green|orange"
-  onClick={() => handleCall('XXX-XXX-XXXX', 'Service')}
+  onClick={() => handleCall("XXX-XXX-XXXX", "Service")}
 />
 ```
 
 ## 🔄 State Management
 
 The app uses React Hooks for state management:
+
 - `useState`: Form inputs and UI state
 - `useNavigate`: Page routing
 - `useLocation`: Current location access
@@ -272,16 +290,19 @@ The app uses React Hooks for state management:
 ## 🐛 Troubleshooting
 
 ### Location Not Working
+
 - Check browser permissions for geolocation
 - Ensure HTTPS in production
 - Verify geolocation is enabled in settings
 
 ### Form Not Submitting
+
 - Check all validation errors are resolved
 - Verify all required fields are filled
 - Clear browser cache if needed
 
 ### Styling Issues
+
 - Run `pnpm build` to generate Tailwind classes
 - Clear browser cache
 - Verify Tailwind config is correct
@@ -289,6 +310,7 @@ The app uses React Hooks for state management:
 ## 📞 Support
 
 For issues or feature requests, please check:
+
 - Project documentation
 - Tailwind CSS docs: https://tailwindcss.com
 - React Router docs: https://reactrouter.com
