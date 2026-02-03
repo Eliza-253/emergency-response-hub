@@ -491,6 +491,46 @@ VITE_API_URL=http://localhost:3000
 
 ## 📝 Customization
 
+### Responsive Behavior
+
+**Mobile (375px - 640px)**
+- Single column layout
+- Large touch-friendly buttons (48px+ height)
+- Stacked form inputs
+- Simplified navigation
+- Full-width emergency button
+- Service cards in single column
+
+**Tablet (641px - 1024px)**
+- Two-column grid for service cards
+- Optimized spacing
+- Medium-sized buttons
+- Side-by-side form fields
+- Enhanced readability
+
+**Desktop (1025px+)**
+- Three-column grid for service cards
+- Full feature display
+- Maximum content width (max-w-6xl)
+- Optimal spacing and typography
+- All features visible at once
+
+**Header Behavior**
+- Mobile: Logo icon only, nav text visible
+- Desktop: Full logo + tagline, full nav
+- Sign Up button always visible (gradient red)
+- Navigation links have animated underlines
+
+### Mobile Experience Optimizations
+- Touch targets minimum 48x48 pixels
+- Optimized form keyboard display
+- Fast load times with Vite
+- Smooth animations on mobile
+- Native mobile styling
+- Responsive images and icons
+
+## 🎨 Customization
+
 ### Change Brand Colors
 
 Edit `client/global.css`:
