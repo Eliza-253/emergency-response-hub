@@ -312,17 +312,20 @@ User registration page featuring:
 ## 🎓 Form Tips & Best Practices
 
 ### Password Selection
+
 - Use at least 8 characters
 - Mix letters, numbers, and symbols
 - Avoid personal information
 - Make it memorable but secure
 
 ### Email Validation
+
 - Must contain @ symbol
 - Must have domain (e.g., .com, .org)
 - Check for typos before submitting
 
 ### Phone Number Formats
+
 - Accepts various formats:
   - (555) 123-4567
   - 555-123-4567
@@ -331,6 +334,7 @@ User registration page featuring:
 - Must be 10+ digits
 
 ### Contact Information
+
 - Relationship helps identify contact type
 - Phone number should be reachable
 - Keep list updated regularly
@@ -494,6 +498,7 @@ VITE_API_URL=http://localhost:3000
 ### Responsive Behavior
 
 **Mobile (375px - 640px)**
+
 - Single column layout
 - Large touch-friendly buttons (48px+ height)
 - Stacked form inputs
@@ -502,6 +507,7 @@ VITE_API_URL=http://localhost:3000
 - Service cards in single column
 
 **Tablet (641px - 1024px)**
+
 - Two-column grid for service cards
 - Optimized spacing
 - Medium-sized buttons
@@ -509,6 +515,7 @@ VITE_API_URL=http://localhost:3000
 - Enhanced readability
 
 **Desktop (1025px+)**
+
 - Three-column grid for service cards
 - Full feature display
 - Maximum content width (max-w-6xl)
@@ -516,12 +523,14 @@ VITE_API_URL=http://localhost:3000
 - All features visible at once
 
 **Header Behavior**
+
 - Mobile: Logo icon only, nav text visible
 - Desktop: Full logo + tagline, full nav
 - Sign Up button always visible (gradient red)
 - Navigation links have animated underlines
 
 ### Mobile Experience Optimizations
+
 - Touch targets minimum 48x48 pixels
 - Optimized form keyboard display
 - Fast load times with Vite
@@ -606,12 +615,14 @@ The app uses React Hooks for state management:
 ## 🌐 Browser & Device Compatibility
 
 ### Supported Browsers
+
 - **Chrome/Edge**: 90+
 - **Firefox**: 88+
 - **Safari**: 14+ (macOS & iOS)
 - **Mobile Browsers**: All modern versions
 
 ### Supported Devices
+
 - iPhones (iOS 14+)
 - Android phones (Android 8+)
 - iPads & tablets
@@ -619,12 +630,15 @@ The app uses React Hooks for state management:
 - Foldable phones
 
 ### Not Supported
+
 - Internet Explorer
 - Very old mobile browsers
 - Devices without geolocation API
 
 ### Localization
+
 Currently in English (US) with planned support for:
+
 - Spanish
 - French
 - Mandarin Chinese
@@ -633,27 +647,35 @@ Currently in English (US) with planned support for:
 ## ❓ Frequently Asked Questions
 
 **Q: Is my data encrypted?**
+
 - Yes! All personal information is encrypted end-to-end. Location is only shared during active emergency calls.
 
 **Q: What happens if I lose internet?**
+
 - The emergency button UI remains functional offline, but calls require internet connectivity.
 
 **Q: Can I use this on a smartwatch?**
+
 - Currently optimized for phones/tablets. Smartwatch app coming in future versions.
 
 **Q: How do I delete my account?**
+
 - Navigate to settings to manage account data or contact support.
 
 **Q: Is there a web version?**
+
 - Yes! This is a fully responsive Progressive Web App. Works on desktop, tablets, and mobile.
 
 **Q: Can I customize emergency numbers?**
+
 - The default US numbers are pre-configured. Custom numbers can be added in the app settings.
 
 **Q: How often should I update my contacts?**
+
 - Keep emergency contacts current. Review and update at least annually.
 
 **Q: Does the app work internationally?**
+
 - Yes, but emergency numbers vary by country. Customize them in settings.
 
 ## 📞 Support
@@ -666,6 +688,7 @@ For issues or feature requests, please check:
 - Lucide Icons: https://lucide.dev
 
 **Reporting Issues**
+
 1. Check the troubleshooting section above
 2. Verify browser/device compatibility
 3. Clear cache and try again
@@ -675,12 +698,14 @@ For issues or feature requests, please check:
 ## ⚡ Performance
 
 ### Load Times
+
 - **Initial Load**: < 2 seconds
 - **Time to Interactive**: < 3 seconds
 - **Bundle Size**: < 200KB (gzipped)
 - **Lighthouse Score**: 95+
 
 ### Optimizations
+
 - Code splitting for faster loads
 - Image lazy loading
 - CSS minification
@@ -689,6 +714,7 @@ For issues or feature requests, please check:
 - Optimized asset delivery
 
 ### Mobile Performance
+
 - Works on slower networks (3G+)
 - Smooth 60fps animations
 - Optimized touch interactions
@@ -698,6 +724,7 @@ For issues or feature requests, please check:
 ## 🗺️ Roadmap
 
 ### Version 2.0 (Planned)
+
 - [ ] Dark mode support
 - [ ] Multi-language support
 - [ ] Custom emergency numbers
@@ -705,6 +732,7 @@ For issues or feature requests, please check:
 - [ ] Emergency contacts auto-sync
 
 ### Version 3.0 (Future)
+
 - [ ] Smartwatch app
 - [ ] Voice commands
 - [ ] Real location integration
@@ -713,7 +741,9 @@ For issues or feature requests, please check:
 - [ ] AI-powered emergency assessment
 
 ### Community Contributions
+
 We welcome contributions! Areas for help:
+
 - Bug fixes
 - Performance improvements
 - Accessibility enhancements
