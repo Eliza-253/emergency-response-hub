@@ -44,6 +44,152 @@ A modern, production-ready emergency response application designed to connect us
 - **Professional Typography**: Bold headings and clear hierarchy
 - **Color-Coded Services**: Each emergency service has its own color scheme
 
+## 📚 Feature Walkthrough
+
+### Home Page - Emergency Dashboard
+
+The home page is designed for speed and accessibility in emergencies:
+
+1. **Header Navigation** (Sticky)
+   - SafeCall logo with alert icon
+   - Navigation links (Home, Contacts, Sign Up)
+   - Branded color scheme with hover animations
+
+2. **Hero Section**
+   - "24/7 Always Available" badge
+   - Bold headline: "Emergency Response at Your Fingertips"
+   - Subheading explaining the app's purpose
+
+3. **Emergency Call Button**
+   - Large circular red button (primary focus)
+   - Triple-ring pulsing animation
+   - Phone icon centered in button
+   - Scale up on hover (1.1x)
+   - Text below: "Emergency Call - Tap to call 911 instantly"
+   - Live location status display
+
+4. **Quick Services Section**
+   - Grid of 6 colorful cards:
+     - **Fire Emergency** (Red) → 911
+     - **Police** (Blue) → 911
+     - **Medical Emergency** (Green) → 911
+     - **Non-Emergency Police** (Orange) → 311
+     - **Poison Control** (Orange) → 1-800-222-1222
+     - **Suicide Prevention** (Blue) → 988
+   - Each card shows icon, title, description, and number
+   - Hover effect: card lifts, icon scales, colors brighten
+   - Click initiates call (simulated in demo)
+
+5. **Key Features Section**
+   - 4 feature cards with hover effects:
+     - Location Sharing with map icon
+     - One-Tap Calling with phone icon
+     - Emergency Contacts with heart icon
+     - Privacy Protected with shield icon
+   - Each card includes description and benefits
+
+6. **Footer**
+   - Copyright information
+   - Privacy assurance messaging
+   - Branding tagline
+
+### Emergency Contacts Page
+
+Manage your trusted emergency contacts:
+
+1. **Page Header**
+   - "Emergency Contacts" title with gradient accent
+   - Subtitle: "Keep your trusted contacts nearby..."
+
+2. **Add Contact Button**
+   - Red gradient button with plus icon
+   - Opens inline form when clicked
+
+3. **Add Contact Form** (when visible)
+   - Full Name input (with user icon)
+   - Relationship input (e.g., "Family", "Friend")
+   - Phone Number input (with phone icon)
+   - Save Contact button (gradient red)
+   - Cancel button (gray)
+   - Validation feedback below each field
+
+4. **Contact List**
+   - Each contact displayed as a card:
+     - User icon in circle
+     - Name and relationship
+     - Phone number
+     - Call button (blue)
+     - Delete button (red)
+   - Smooth hover animations
+   - Empty state shows helpful message when no contacts
+
+5. **Contact Actions**
+   - Click call button → simulated phone call
+   - Click delete → removes contact immediately
+   - Real-time list updates
+
+### Sign-Up Page
+
+Create a new SafeCall account:
+
+1. **Page Header**
+   - "Get Started with SafeCall" title (with gradient)
+   - Helpful subtitle about account benefits
+
+2. **Sign-Up Form**
+   - **Full Name**
+     - User icon
+     - Placeholder: "John Doe"
+     - Validates non-empty
+
+   - **Email Address**
+     - Mail icon
+     - Placeholder: "john@example.com"
+     - Validates email format
+
+   - **Phone Number**
+     - Phone icon
+     - Placeholder: "(555) 123-4567"
+     - Validates 10+ digit format
+
+   - **Password**
+     - Lock icon
+     - Eye icon to toggle visibility
+     - Validates minimum 8 characters
+     - Placeholder: "At least 8 characters"
+
+   - **Confirm Password**
+     - Lock icon
+     - Eye icon to toggle visibility
+     - Validates match with password
+     - Shows error if passwords don't match
+
+3. **Real-Time Validation**
+   - Errors show in red below each field
+   - Error clears when user starts typing
+   - Fields highlight in red if invalid
+   - Helpful error messages guide users
+
+4. **Create Account Button**
+   - Full width, red gradient background
+   - Shows loading spinner during submission
+   - Auto-disables while processing
+   - Click submits form and validates
+
+5. **Success Flow**
+   - Success page shows with checkmark animation
+   - Message: "Welcome to SafeCall! Your account has been created successfully"
+   - Auto-redirects to home after 2 seconds
+   - Progress bar animates during redirect
+
+6. **Sign-In Link**
+   - "Already have an account? Sign In" at bottom
+   - Links to home page
+
+7. **Terms & Privacy**
+   - Information box at bottom
+   - Explains data encryption and privacy
+
 ## 📱 Pages
 
 ### Home (`/`)
