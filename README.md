@@ -225,6 +225,116 @@ User registration page featuring:
 - Real-time error feedback
 - Success page with redirect
 
+## 👤 How to Use SafeCall
+
+### Quick Start (First Time Users)
+
+1. **Access the App**
+   - Navigate to the home page
+   - Review the "Emergency Response at Your Fingertips" headline
+   - Grant location permission when prompted
+
+2. **Make an Emergency Call**
+   - Click the large red emergency button
+   - The app simulates calling 911
+   - Location is shared automatically
+
+3. **Choose Specific Services**
+   - Scroll to "Quick Services" section
+   - Click desired service card (Fire, Police, Medical, etc.)
+   - Simulated call initiated with that service
+
+### Adding Emergency Contacts
+
+1. **Navigate to Contacts Page**
+   - Click "Contacts" in header navigation
+   - Or use link on home page
+
+2. **Add Your First Contact**
+   - Click "Add Contact" button
+   - Fill in form:
+     - **Full Name**: Enter contact's name
+     - **Relationship**: "Family", "Friend", "Doctor", etc.
+     - **Phone**: Contact's phone number
+   - Click "Save Contact"
+   - Contact appears in list immediately
+
+3. **Call a Contact**
+   - Find contact in list
+   - Click blue phone icon
+   - App simulates call to that contact
+
+4. **Delete a Contact**
+   - Find contact in list
+   - Click red trash icon
+   - Contact removed immediately
+
+### Creating Your Account
+
+1. **Navigate to Sign-Up**
+   - Click "Sign Up" button in header
+   - Or at bottom of any page
+
+2. **Fill Out Registration Form**
+   - **Full Name**: Your legal name
+   - **Email**: Valid email address
+   - **Phone**: Your phone number
+   - **Password**: Strong password (8+ characters)
+   - **Confirm Password**: Type password again
+
+3. **Validation Feedback**
+   - Red error messages appear for invalid fields
+   - Fix errors - messages disappear when corrected
+   - All fields must be valid before submitting
+
+4. **Submit**
+   - Click "Create Account"
+   - Loading spinner shows during processing
+   - Success page displays if valid
+   - Auto-redirects to home page
+
+### Managing Location
+
+1. **Grant Permission**
+   - Browser prompts for location access
+   - Click "Allow" to enable location sharing
+   - Green indicator shows location is active
+
+2. **View Your Location**
+   - Location coordinates display below emergency button
+   - Format: "Latitude, Longitude"
+   - Updates automatically
+
+3. **Disable Location**
+   - Check browser location settings
+   - Can revoke permission for the app
+
+## 🎓 Form Tips & Best Practices
+
+### Password Selection
+- Use at least 8 characters
+- Mix letters, numbers, and symbols
+- Avoid personal information
+- Make it memorable but secure
+
+### Email Validation
+- Must contain @ symbol
+- Must have domain (e.g., .com, .org)
+- Check for typos before submitting
+
+### Phone Number Formats
+- Accepts various formats:
+  - (555) 123-4567
+  - 555-123-4567
+  - 555.123.4567
+  - 5551234567
+- Must be 10+ digits
+
+### Contact Information
+- Relationship helps identify contact type
+- Phone number should be reachable
+- Keep list updated regularly
+
 ## 🛠️ Tech Stack
 
 - **Frontend**: React 18 + React Router 6 (SPA)
