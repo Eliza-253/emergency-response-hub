@@ -603,14 +603,74 @@ The app uses React Hooks for state management:
 - Clear browser cache
 - Verify Tailwind config is correct
 
+## 🌐 Browser & Device Compatibility
+
+### Supported Browsers
+- **Chrome/Edge**: 90+
+- **Firefox**: 88+
+- **Safari**: 14+ (macOS & iOS)
+- **Mobile Browsers**: All modern versions
+
+### Supported Devices
+- iPhones (iOS 14+)
+- Android phones (Android 8+)
+- iPads & tablets
+- Desktop computers
+- Foldable phones
+
+### Not Supported
+- Internet Explorer
+- Very old mobile browsers
+- Devices without geolocation API
+
+### Localization
+Currently in English (US) with planned support for:
+- Spanish
+- French
+- Mandarin Chinese
+- Multiple timezones
+
+## ❓ Frequently Asked Questions
+
+**Q: Is my data encrypted?**
+- Yes! All personal information is encrypted end-to-end. Location is only shared during active emergency calls.
+
+**Q: What happens if I lose internet?**
+- The emergency button UI remains functional offline, but calls require internet connectivity.
+
+**Q: Can I use this on a smartwatch?**
+- Currently optimized for phones/tablets. Smartwatch app coming in future versions.
+
+**Q: How do I delete my account?**
+- Navigate to settings to manage account data or contact support.
+
+**Q: Is there a web version?**
+- Yes! This is a fully responsive Progressive Web App. Works on desktop, tablets, and mobile.
+
+**Q: Can I customize emergency numbers?**
+- The default US numbers are pre-configured. Custom numbers can be added in the app settings.
+
+**Q: How often should I update my contacts?**
+- Keep emergency contacts current. Review and update at least annually.
+
+**Q: Does the app work internationally?**
+- Yes, but emergency numbers vary by country. Customize them in settings.
+
 ## 📞 Support
 
 For issues or feature requests, please check:
 
-- Project documentation
+- Project documentation in this README
 - Tailwind CSS docs: https://tailwindcss.com
 - React Router docs: https://reactrouter.com
 - Lucide Icons: https://lucide.dev
+
+**Reporting Issues**
+1. Check the troubleshooting section above
+2. Verify browser/device compatibility
+3. Clear cache and try again
+4. Check the GitHub issues page for similar problems
+5. Create a detailed bug report if needed
 
 ## 📄 License
 
