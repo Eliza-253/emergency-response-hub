@@ -25,3 +25,15 @@ dist-ssr
 
 .config/
 !.env
+
+# Capacitor files
+/android
+/dist
+
+# Android development
+.gradle/
+*.gradle
+*.gradle.kts
+*.apk
+*.aab
+local.properties

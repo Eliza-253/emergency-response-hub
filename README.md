@@ -388,6 +388,101 @@ pnpm test
 pnpm typecheck
 ```
 
+### Build for Android
+
+SafeCall is now ready to build as a native Android app using **Capacitor**. Follow these steps to get started:
+
+#### Prerequisites
+- Android Studio installed on your machine
+- Android SDK (API level 24 or higher)
+- Java Development Kit (JDK 11 or higher)
+
+#### Setup Android Development Environment
+
+1. **Install Android Studio**:
+   - Download from https://developer.android.com/studio
+   - Complete the Android Studio setup wizard
+
+2. **Set up Android SDK**:
+   - Open Android Studio → SDK Manager
+   - Install API 24+ (recommended API 34)
+   - Install build tools
+
+3. **Configure Environment Variables** (macOS/Linux):
+   ```bash
+   export ANDROID_HOME=$HOME/Library/Android/sdk  # macOS
+   export ANDROID_HOME=$HOME/Android/Sdk          # Linux
+   export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin
+   export PATH=$PATH:$ANDROID_HOME/platform-tools
+   ```
+
+#### Build Commands
+
+```bash
+# Build web assets and prepare for Android
+pnpm android:build
+
+# This will open Android Studio with the project loaded
+
+# Alternatively, sync changes without opening Android Studio
+pnpm android:sync
+
+# Run app directly on emulator or connected device
+pnpm android:run
+
+# Open the Android project in Android Studio
+pnpm android:open
+```
+
+#### Building the APK
+
+1. **Via Android Studio**:
+   - Open the project with `pnpm android:open`
+   - Click "Build" → "Build Bundle(s) / APK(s)" → "Build APK(s)"
+   - Find APK in `android/app/build/outputs/apk/debug/`
+
+2. **Via Command Line**:
+   ```bash
+   cd android
+   ./gradlew assembleDebug      # For debug APK
+   ./gradlew assembleRelease    # For release APK (requires signing key)
+   cd ..
+   ```
+
+#### Native Permissions
+
+The following permissions are requested in the Android manifest:
+- **CAMERA**: For emergency video calls
+- **ACCESS_FINE_LOCATION**: For location sharing with responders
+- **CALL_PHONE**: For making emergency calls
+
+#### Testing on Device
+
+```bash
+# Install and run on connected Android device
+pnpm android:run
+
+# Or manually:
+cd android
+./gradlew installDebug
+```
+
+#### Debugging Tips
+
+- **Check Capacitor status**: `npx cap doctor`
+- **View logs**: `npx cap open android` then View → Tool Windows → Logcat
+- **Hot reload**: Changes to web code don't auto-reload in native app; rebuild and sync
+- **Connection issues**: Ensure device has USB debugging enabled and is recognized by ADB
+
+#### Production Release
+
+For release builds, you'll need:
+1. Keystore file for signing APK
+2. Update version in `capacitor.config.ts`
+3. Build signed APK via Android Studio or Gradle
+
+For detailed Capacitor documentation: https://capacitorjs.com/docs
+
 ## 📖 Project Structure
 
 ```
