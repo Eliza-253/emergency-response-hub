@@ -1,15 +1,70 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Character Encoding and Viewport -->
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="SafeCall - Emergency Response at Your Fingertips" />
-    <title>SafeCall - Emergency Response</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <!-- App Information -->
+    <title>SafeCall - Emergency Response at Your Fingertips</title>
+    <meta name="description" content="SafeCall: Modern emergency response app. Quick access to 911, emergency services, contact management, and location sharing. Available on iOS, Android, and web." />
+    <meta name="keywords" content="emergency, 911, emergency services, emergency response, safety app, emergency contacts" />
+    <meta name="author" content="SafeCall Emergency Response" />
+    <meta name="theme-color" content="#dc2626" />
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="SafeCall - Emergency Response at Your Fingertips" />
+    <meta property="og:description" content="Connect with emergency services instantly. SafeCall provides one-tap 911 access, contact management, and location sharing." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/favicon.ico" />
+    <meta property="og:url" content="https://safecall.app" />
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SafeCall - Emergency Response" />
+    <meta name="twitter:description" content="Emergency response app with one-tap 911 access and contact management" />
+    <meta name="twitter:image" content="/favicon.ico" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/favicon.ico" />
+
+    <!-- Preconnect to External Resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Manifest for PWA -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Mobile App Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="SafeCall" />
+    <meta name="format-detection" content="telephone=yes" />
+
+    <!-- Security and Performance -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <!-- NoIndex for Development (remove in production) -->
+    <!-- <meta name="robots" content="noindex, nofollow" /> -->
   </head>
 
   <body>
-    <div id="root"></div>
+    <!-- Root container for React app -->
+    <div id="root" role="application" aria-label="SafeCall Emergency Response Application"></div>
 
+    <!-- React App Entry Point -->
     <script type="module" src="/client/App.tsx"></script>
+
+    <!-- Fallback for JavaScript disabled -->
+    <noscript>
+      <div style="text-align: center; padding: 50px; font-family: system-ui, -apple-system, sans-serif;">
+        <h1>SafeCall - Emergency Response</h1>
+        <p>This application requires JavaScript to be enabled.</p>
+        <p>Please enable JavaScript in your browser settings and refresh the page.</p>
+        <p>In case of emergency, call 911 directly.</p>
+      </div>
+    </noscript>
   </body>
 </html>
